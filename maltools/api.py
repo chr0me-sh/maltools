@@ -8,7 +8,10 @@ class API:
         self.key = key
 
     def download(self, hash, path):
-        data = _get_sample(hash)
+        try:
+            data = _get_sample(hash)
+        except NotImplementedError as e:
+            raise e
         with Path(path) as p:
             if p.is_dir():
                 p = p.joinpath(hash)
