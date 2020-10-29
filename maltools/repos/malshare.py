@@ -18,6 +18,6 @@ class Malshare(API):
     def _get_sample(self, h):
         return self._get('getfile', hash=h).content
 
-    def _get(self, action, **kwargs):
-        query = {'api_key': self.key, 'action': action} | kwargs
-        return requests.get(self.URL_BASE, query)
+    def _get(self, action, h):
+        query = {'api_key': self.key, 'action': action, 'hash': h}
+        return requests.get(self.URL_BASE, params=query)

@@ -7,7 +7,7 @@ class VirusTotal(API):
 
     def info(self, h):
         return self._get('files', h).text
-    
+
     def _get_sample(self, h):
         return self._get('files', h, 'download').content
 
