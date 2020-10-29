@@ -7,6 +7,7 @@ import requests
 
 class VirusShare(API):
     URL_BASE = "https://virusshare.com/apiv2/"
+    actions = ['info', 'download']
 
     def info(self, h):
         info = self._get('file', h).json()

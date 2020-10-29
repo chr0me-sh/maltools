@@ -10,7 +10,7 @@ for _, m, _ in pkgutil.iter_modules(
     importlib.import_module(m)
 
 api_list = {
-    sub.__name__: sub
+    sub.__name__.lower(): sub
     for sub
     in API.__subclasses__()
 }

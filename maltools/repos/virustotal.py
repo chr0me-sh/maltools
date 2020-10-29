@@ -4,6 +4,7 @@ import requests
 
 class VirusTotal(API):
     URL_BASE = "https://www.virustotal.com/api/v3"
+    actions = ['info', 'download']
 
     def info(self, h):
         return self._get('files', h).text
